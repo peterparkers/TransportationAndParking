@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    font-size: 2.3em;
+    padding: 10px;
+    margin: 0;
+    font-family: 'Palanquin Dark', sans-serif;
+    color: #f1c40f;
+}
+h3 {
+    font-family: 'Prompt', sans-serif;
+}
+p {
+    font-family: 'Prompt', sans-serif;
+}
+header {
+    height: 25vh;
+    background: #2c3e50;
+}
+nav {
+    height: 100%;
+    text-align: center;
+}
+ul {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0;
+    margin: 0;
+    margin-top: 5px;
+    display: flex;
+}
+ul li {
+    list-style: none;
+    margin: 0 40px;
+}
+ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Palanquin Dark', sans-serif;
+}
+ul li a:hover {
+    color: #f1c40f;
+}
+.current {
+    color: #f1c40f;
+}
+.container {
+    background: linear-gradient(to right, #262626, #1f1e1e);
+    height: 90vh;
+    display: flex;
+}
+.left {
+    padding-top: 100px;
+    position: relative;
+    flex: 1;
+    text-align: center;
+}
+.right {
+    padding-top: 100px;
+    position: relative;
+    flex: 1;
+    text-align: center;
+}
+.map-box {
+    position: absolute;
+    background: #f1c40f;
+    color: #262626;
+    padding: 50px;
+    width: 200px;
+    border-radius: 10px;
+    height: 200px;
+    display: flex;
+    box-shadow: 10px 10px 8px #1d1c1c;
+}
+.map-box a {
+    font-size: 1.6em;
+    font-family: 'Palanquin Dark', sans-serif;
+    text-decoration: none;
+    margin: auto;
+    color: #262626;
+}
+.map-box a:hover {
+    color: #c0392b;
+}
+.box1 {
+    left: 40%;
+}
+.box2 {
+    left: 15%;
+}
+#map {
+    height: 100%;
+    width: 100%;
+    flex: 4;
+}
+#map-draft {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    text-align: center;
+}
+img {
+    margin-top: 20px;
+}
+.guide {
+    background: #ecf0f1;
+    flex: 3;
+    padding: 10px;
+}

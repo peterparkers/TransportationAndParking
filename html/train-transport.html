@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Map (Google Map)</title>
+    <link rel="stylesheet" href="../css/map.css">
+    <link href="https://fonts.googleapis.com/css?family=Palanquin+Dark" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Transportation (Train)</h1>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="map.html">Map</a></li>
+                <li><a href="transport.html" class="current">Transportation</a></li>
+                <li><a href="../php/parking.php">Parking</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div id="map"> </div>
+    </div>
+    
+    <script>
+        function initMap(position) {
+            var lat = 12.957673;
+            var lng = 100.941566;
+            var location = {lat: lat, lng: lng};
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 12,
+                center: location
+            });
+
+            addMarker({
+                coords:{lat: 12.957673, lng: 100.941566},
+                iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+                content: '<h2>อุทยานหินล้านปี</h2>'
+            });
+            addMarker({
+                coords:{lat: 12.908369, lng: 100.901202},
+                content: '<h2>สถานีรถไฟพัทยาใต้</h2>'
+            });
+            addMarker({
+                coords:{lat: 12.940238, lng: 100.909295},
+                content: '<h2>สถานีรถไฟพัทยา</h2>'
+            });
+            function addMarker(props) {
+                var marker = new google.maps.Marker({
+                    position: props.coords,
+                    map: map
+                });
+                if(props.iconImage) {
+                    marker.setIcon(props.iconImage);
+                }
+                if(props.content) {
+                    var infoWindow = new google.maps.InfoWindow({
+                        content: props.content
+                    });
+                    marker.addListener('click', function() {
+                        infoWindow.open(map, marker);
+                    });
+                    function info() {
+                        infoWindow.open(map, marker);
+                    }
+                    info();
+                }
+            }
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvaOPBDCjh4lH5M1rkfDWl9p1Lhbht93Y&callback=initMap"></script>
+</body>
+</html>
